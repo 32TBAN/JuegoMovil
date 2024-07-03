@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8t3gdnd2ucoo"]
+
+[ext_resource type="Script" path="res://scenarios/background.gd" id="1_4prep"]
+[ext_resource type="Texture2D" uid="uid://8dasuionobe7" path="res://scenarios/back.png" id="2_ygeyr"]
+[ext_resource type="Texture2D" uid="uid://crqbtr572k37b" path="res://scenarios/middle.png" id="3_k2pnj"]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource("1_4prep")
+metadata/_edit_horizontal_guides_ = [-52.0, -107.0, -88.0]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1148, 0)
+
+[node name="Sprite2DBack" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(582.5, 323.609)
+scale = Vector2(3.01302, 2.71159)
+texture = ExtResource("2_ygeyr")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.7, 1.7)
+motion_mirroring = Vector2(1047, 0)
+
+[node name="Sprite2DBack" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(85, 496)
+texture = ExtResource("3_k2pnj")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2DBack2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(256, 500)
+texture = ExtResource("3_k2pnj")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2DBack3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(426, 500)
+texture = ExtResource("3_k2pnj")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2DBack4" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(600, 506)
+texture = ExtResource("3_k2pnj")
+offset = Vector2(1, -5)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2DBack5" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(777, 503)
+texture = ExtResource("3_k2pnj")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2DBack6" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(953, 505)
+texture = ExtResource("3_k2pnj")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2DBack7" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1129, 497)
+texture = ExtResource("3_k2pnj")
+metadata/_edit_lock_ = true
