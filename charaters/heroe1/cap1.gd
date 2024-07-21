@@ -8,6 +8,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var attack_area = $Area2DAttack
 var is_attacking = false
 
+var arrow_scene = preload("res://charaters/heroe1/arrow/arrow.tscn")
+
 func _process(delta):
 	if !is_attacking:
 		handle_input()
@@ -20,6 +22,14 @@ func _process(delta):
 		is_attacking = true
 		get_node("Area2DAttack/CollisionShape2DAttack").disabled = false
 
+	if Input.is_action_just_pressed("attack2") and not is_attacking:
+		anim.play("RangeAttack")
+		is_attacking = true
+		anim.position.y = -51
+		anim.flip_h = !anim.flip_h
+		shoot_arrow()
+		
+		
 func handle_input():
 	velocity.x = 0
 	
@@ -27,13 +37,17 @@ func handle_input():
 		anim.flip_h = false
 		velocity.x = SPEED
 		attack_area.position.x = 0
-		$CollisionShape2DPlayer.position.x = 0		
+		$CollisionShape2DPlayer.position.x = -20		
+		anim.position.x = 0
+		attack_area.position.x = -23
 		
 	elif Input.is_action_pressed("left"):
 		anim.flip_h = true
 		velocity.x = -SPEED
-		$CollisionShape2DPlayer.position.x = 43
-		attack_area.position.x = -34  # Cambiar la posición del área de ataque
+		attack_area.position.x = -83  # Cambiar la posición del área de ataque
+		
+		$CollisionShape2DPlayer.position.x = -10		
+		anim.position.x = -30
 		
 	if velocity.x != 0 && !is_attacking:
 		if is_on_floor():
@@ -53,9 +67,29 @@ func _on_animated_sprite_2d_animation_finished():
 	if anim.animation == "MeleAttack":
 		is_attacking = false
 		get_node("Area2DAttack/CollisionShape2DAttack").disabled = true
+	elif anim.animation == "RangeAttack":
+		anim.position.y = $CollisionShape2DPlayer.position.y	
+		is_attacking = false
+		anim.flip_h = !anim.flip_h
 		
-		# Después de atacar, verificar la entrada y actualizar la animación
-		if velocity.x != 0:
-			anim.play("Run")
-		else:
-			anim.play("Idle")
+	if velocity.x != 0:
+		anim.play("Run")
+	else:
+		anim.play("Idle")
+
+func shoot_arrow():
+	var arrow = arrow_scene.instantiate()
+	var direction = false
+	if !anim.flip_h:
+		direction = Vector2.LEFT
+		arrow.get_node("Arrow").flip_h = true
+	else:
+		direction = Vector2.RIGHT
+				
+	arrow.direction = direction
+	if direction.x == -1:
+		arrow.position = global_position + Vector2(direction.x * 50, -40)	
+		arrow.get_node("Area2D/CollisionShape2D").position.x = direction.x
+	else:
+		arrow.position = global_position + Vector2(direction.x * 20, -40)
+	get_parent().add_child(arrow)

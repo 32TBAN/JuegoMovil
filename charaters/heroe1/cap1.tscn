@@ -796,11 +796,11 @@ size = Vector2(41, 60)
 script = ExtResource("1_pxtit")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(19, -34)
+position = Vector2(26, -33)
 scale = Vector2(1.90198, 1.70508)
 sprite_frames = SubResource("SpriteFrames_rvwlv")
-animation = &"MeleAttack"
-frame = 25
+animation = &"Idle"
+frame = 17
 frame_progress = 1.0
 
 [node name="CollisionShape2DPlayer" type="CollisionShape2D" parent="."]
@@ -815,7 +815,7 @@ limit_top = 0
 [node name="Area2DAttack" type="Area2D" parent="." groups=["Sword"]]
 
 [node name="CollisionShape2DAttack" type="CollisionShape2D" parent="Area2DAttack"]
-position = Vector2(38.5, -30)
+position = Vector2(38, -31)
 shape = SubResource("RectangleShape2D_n6up5")
 disabled = true
 

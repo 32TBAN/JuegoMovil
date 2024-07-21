@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4bfuloucb8qc"]
+
+[ext_resource type="Texture2D" uid="uid://cwq2jso1ag1l1" path="res://charaters/enemies/eagle/fly/eagle-attack-1.png" id="1_wodfy"]
+[ext_resource type="Texture2D" uid="uid://bn12x5wqfxi5l" path="res://charaters/enemies/eagle/fly/eagle-attack-2.png" id="2_df3gu"]
+[ext_resource type="Texture2D" uid="uid://drjv27ncpd4x0" path="res://charaters/enemies/eagle/fly/eagle-attack-3.png" id="3_b4oq2"]
+[ext_resource type="Texture2D" uid="uid://cb2xu75fdr2yl" path="res://charaters/enemies/eagle/fly/eagle-attack-4.png" id="4_hy7na"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d58v0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wodfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_df3gu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b4oq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hy7na")
+}],
+"loop": false,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d58v0")
+animation = &"fly"
+frame = 3
+frame_progress = 1.0

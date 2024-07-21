@@ -68,5 +68,8 @@ func _on_area_2d_area_entered(area):
 		is_dead = true
 		anim.play("Death")
 		velocity.x = 0
-		
+	elif area.is_in_group("ArrowDamage"):
+		is_dead = true
+		anim.play("Death")
+		velocity.x = 0
 	
