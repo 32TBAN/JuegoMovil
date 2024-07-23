@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd62rvt87k0jg"]
+[gd_scene load_steps=11 format=3 uid="uid://bd62rvt87k0jg"]
 
 [ext_resource type="PackedScene" uid="uid://ct7wr7yuu41u6" path="res://charaters/heroe1/cap1.tscn" id="1_d8hso"]
 [ext_resource type="Texture2D" uid="uid://b34rl1wraqebn" path="res://charactersImg/tileset.png" id="2_x8h6c"]
 [ext_resource type="Texture2D" uid="uid://8dasuionobe7" path="res://scenarios/back.png" id="3_1e8hu"]
 [ext_resource type="PackedScene" uid="uid://bjeay8t7yuvaf" path="res://charaters/enemies/enemy1/enemy1.tscn" id="4_3qig7"]
+[ext_resource type="PackedScene" uid="uid://d4bfuloucb8qc" path="res://charaters/enemies/eagle/eagle.tscn" id="5_hwjho"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvfjh"]
 
@@ -493,3 +494,6 @@ position = Vector2(1040, 616)
 
 [node name="enemy12" parent="Mods" instance=ExtResource("4_3qig7")]
 position = Vector2(1112, 616)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_hwjho")]
+position = Vector2(48, 488)
