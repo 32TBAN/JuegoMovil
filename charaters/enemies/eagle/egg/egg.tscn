@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvfy5csv5qwxo"]
+
+[ext_resource type="Script" path="res://charaters/enemies/eagle/egg/egg.gd" id="1_i4fhs"]
+[ext_resource type="Texture2D" uid="uid://eum0cf2wod6p" path="res://charaters/enemies/eagle/egg/egg.png" id="1_roq6a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjy6n"]
+atlas = ExtResource("1_roq6a")
+region = Rect2(225, 0, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53pb4"]
+atlas = ExtResource("1_roq6a")
+region = Rect2(450, 0, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jk8x"]
+atlas = ExtResource("1_roq6a")
+region = Rect2(675, 0, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikhkb"]
+atlas = ExtResource("1_roq6a")
+region = Rect2(900, 0, 225, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wjm4"]
+atlas = ExtResource("1_roq6a")
+region = Rect2(1125, 0, 225, 225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rv2g5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjy6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53pb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jk8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikhkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wjm4")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_0wjm4")
+}],
+"loop": false,
+"name": &"break",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3ecw"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vmy3o"]
+radius = 7.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_i4fhs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.3125, -2.8125)
+scale = Vector2(0.0861111, 0.0816667)
+sprite_frames = SubResource("SpriteFrames_rv2g5")
+animation = &"break"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -2)
+shape = SubResource("CircleShape2D_w3ecw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, -2)
+shape = SubResource("CircleShape2D_vmy3o")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
