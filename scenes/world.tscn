@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bd62rvt87k0jg"]
+[gd_scene load_steps=13 format=3 uid="uid://bd62rvt87k0jg"]
 
 [ext_resource type="Texture2D" uid="uid://b34rl1wraqebn" path="res://assets/img/sceneObjects/lands/tileset.png" id="1_75bsi"]
 [ext_resource type="Texture2D" uid="uid://8dasuionobe7" path="res://scenes/back.png" id="2_bdma0"]
 [ext_resource type="PackedScene" uid="uid://ct7wr7yuu41u6" path="res://charaters/players/cap1.tscn" id="3_tju3s"]
 [ext_resource type="PackedScene" uid="uid://d4bfuloucb8qc" path="res://charaters/enemies/eagle/eagle.tscn" id="4_igmdy"]
 [ext_resource type="PackedScene" uid="uid://bjeay8t7yuvaf" path="res://charaters/enemies/frog/enemy1.tscn" id="5_78ebj"]
+[ext_resource type="PackedScene" uid="uid://bxtpo7k0fuxjm" path="res://scenes/elements/cherry.tscn" id="6_7wjpr"]
+[ext_resource type="Script" path="res://scenes/GameManger.gd" id="7_k7pjh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nvfjh"]
 
@@ -420,6 +422,14 @@ sources/4 = SubResource("TileSetAtlasSource_4wpvx")
 a = Vector2(0, 296)
 
 [node name="world" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [160.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -112.0
+offset_top = 1280.0
+offset_right = 1424.0
+offset_bottom = 2232.0
+texture = ExtResource("2_bdma0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_nvfjh")
@@ -432,7 +442,7 @@ shape = SubResource("RectangleShape2D_60vqq")
 tile_set = SubResource("TileSet_4vhrf")
 rendering_quadrant_size = 15
 format = 2
-layer_0/tile_data = PackedInt32Array(2621441, 983044, 14, 2621442, 983044, 14, 2621443, 983044, 14, 2621444, 983044, 14, 2621445, 983044, 14, 2621446, 983044, 14, 2621447, 983044, 14, 2621448, 983044, 14, 2621449, 983044, 14, 2621450, 983044, 14, 2621440, 983044, 14, 2621451, 983044, 14, 2621452, 983044, 14, 2621453, 983044, 14, 2621454, 983044, 14, 2621455, 983044, 14, 2621456, 983044, 14, 2621457, 983044, 14, 2621458, 983044, 14, 2621459, 983044, 14, 2621460, 983044, 14, 2621461, 983044, 14, 2621462, 983044, 14, 2621463, 983044, 14, 2621464, 983044, 14, 2621465, 983044, 14, 2621466, 983044, 14, 2621467, 983044, 14, 2621468, 983044, 14, 2621469, 983044, 14, 2621470, 983044, 14, 2621471, 983044, 14, 2621472, 983044, 14, 2621473, 983044, 14, 2621474, 983044, 14, 2621475, 983044, 14, 2621476, 983044, 14, 2621477, 983044, 14, 2621478, 983044, 14, 2621479, 983044, 14, 2621480, 983044, 14, 2621481, 983044, 14, 2621482, 983044, 14, 2621483, 983044, 14, 2621484, 983044, 14, 2621485, 983044, 14, 2621486, 983044, 14, 2621487, 983044, 14, 2621488, 983044, 14, 2621489, 983044, 14, 2621490, 983044, 14, 2621491, 983044, 14, 2621492, 983044, 14, 2621493, 983044, 14, 2621494, 983044, 14, 2621495, 983044, 14, 2621496, 983044, 14, 2621497, 983044, 14, 2621498, 983044, 14, 2621499, 983044, 14, 2621500, 983044, 14, 2621501, 983044, 14, 2621502, 983044, 14, 2621503, 983044, 14, 2621504, 983044, 14, 2621505, 983044, 14, 2621506, 983044, 14, 2621507, 983044, 14, 2621508, 983044, 14, 2621509, 983044, 14, 2621510, 983044, 14, 2621511, 983044, 14, 2621512, 983044, 14, 2621513, 983044, 14, 2621514, 983044, 14, 2621515, 983044, 14, 2621516, 983044, 14, 2621517, 983044, 14, 2621518, 983044, 14, 2621519, 983044, 14, 2621520, 983044, 14, 2621521, 983044, 14, 2621522, 983044, 14, 2424868, 983044, 14, 2359341, 983044, 14, 2293805, 983044, 14, 2228269, 983044, 14, 2162733, 983044, 14)
+layer_0/tile_data = PackedInt32Array(2621459, 983044, 14, 2621460, 983044, 14, 2621461, 983044, 14, 2621462, 983044, 14, 2621463, 983044, 14, 2621464, 983044, 14, 2621465, 983044, 14, 2621466, 983044, 14, 2621467, 983044, 14, 2621468, 983044, 14, 2621469, 983044, 14, 2621470, 983044, 14, 2621471, 983044, 14, 2621472, 983044, 14, 2621473, 983044, 14, 2621474, 983044, 14, 2621475, 983044, 14, 2621476, 983044, 14, 2621477, 983044, 14, 2621478, 983044, 14, 2621479, 983044, 14, 2621480, 983044, 14, 2621481, 983044, 14, 2621482, 983044, 14, 2621483, 983044, 14, 2621484, 983044, 14, 2621485, 983044, 14, 2621486, 983044, 14, 2621487, 983044, 14, 2621488, 983044, 14, 2621489, 983044, 14, 2621490, 983044, 14, 2621491, 983044, 14, 2621492, 983044, 14, 2621493, 983044, 14, 2621494, 983044, 14, 2621495, 983044, 14, 2621496, 983044, 14, 2621497, 983044, 14, 2621498, 983044, 14, 2621499, 983044, 14, 2621500, 983044, 14, 2621501, 983044, 14, 2621502, 983044, 14, 2621503, 983044, 14, 2621504, 983044, 14, 2621505, 983044, 14, 2621506, 983044, 14, 2621507, 983044, 14, 2621508, 983044, 14, 2621509, 983044, 14, 2621510, 983044, 14, 2621511, 983044, 14, 2621512, 983044, 14, 2621513, 983044, 14, 2621514, 983044, 14, 2621515, 983044, 14, 2621516, 983044, 14, 2621517, 983044, 14, 2621518, 983044, 14, 2621519, 983044, 14, 2621520, 983044, 14, 2621521, 983044, 14, 2621522, 983044, 14, 2424868, 983044, 14, 2359341, 983044, 14, 2293805, 983044, 14, 2228269, 983044, 14, 2162733, 983044, 14, 1900557, 983044, 14, 1900558, 983044, 14, 1900559, 983044, 14, 1900560, 983044, 14, 1900561, 983044, 14, 1900562, 983044, 14, 1900563, 983044, 14, 1900545, 983044, 14, 1900546, 983044, 14, 1900547, 983044, 14, 1900544, 983044, 14)
 
 [node name="BGP" type="ParallaxBackground" parent="."]
 
@@ -440,14 +450,14 @@ layer_0/tile_data = PackedInt32Array(2621441, 983044, 14, 2621442, 983044, 14, 2
 motion_mirroring = Vector2(1549, 0)
 
 [node name="Sprite2D_back" type="Sprite2D" parent="BGP/ParallaxLayer"]
-position = Vector2(704, 584)
+position = Vector2(776, 416)
 scale = Vector2(4.05013, 3.67292)
 texture = ExtResource("2_bdma0")
 
 [node name="Player" type="Node2D" parent="."]
 
 [node name="player1" parent="Player" instance=ExtResource("3_tju3s")]
-position = Vector2(24, 632)
+position = Vector2(48, 392)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
@@ -522,3 +532,42 @@ position = Vector2(1040, 616)
 
 [node name="enemy12" parent="Mods/frogs" instance=ExtResource("5_78ebj")]
 position = Vector2(1112, 616)
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Cherry" parent="Collectables" instance=ExtResource("6_7wjpr")]
+position = Vector2(432, 584)
+
+[node name="Cherry2" parent="Collectables" instance=ExtResource("6_7wjpr")]
+position = Vector2(584, 560)
+
+[node name="Cherry3" parent="Collectables" instance=ExtResource("6_7wjpr")]
+position = Vector2(728, 528)
+
+[node name="Cherry4" parent="Collectables" instance=ExtResource("6_7wjpr")]
+position = Vector2(880, 504)
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_k7pjh")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 232.0
+offset_bottom = 64.0
+
+[node name="pointsLabel" type="Label" parent="UI/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
