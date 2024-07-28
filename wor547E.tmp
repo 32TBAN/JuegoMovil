@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ct7wr7yuu41u6" path="res://charaters/heroe1/cap1.tscn" id="1_d8hso"]
 [ext_resource type="Texture2D" uid="uid://b34rl1wraqebn" path="res://charactersImg/tileset.png" id="2_x8h6c"]
-[ext_resource type="Texture2D" uid="uid://8dasuionobe7" path="res://scenes/back.png" id="3_1e8hu"]
+[ext_resource type="Texture2D" uid="uid://8dasuionobe7" path="res://scenarios/back.png" id="3_1e8hu"]
 [ext_resource type="PackedScene" uid="uid://bjeay8t7yuvaf" path="res://charaters/enemies/enemy1/enemy1.tscn" id="4_3qig7"]
 [ext_resource type="PackedScene" uid="uid://d4bfuloucb8qc" path="res://charaters/enemies/eagle/eagle.tscn" id="5_hwjho"]
 
@@ -462,28 +462,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 [node name="eagles" type="Node2D" parent="Mods"]
 
 [node name="eagle" parent="Mods/eagles" instance=ExtResource("5_hwjho")]
-position = Vector2(1360, 480)
-
-[node name="eagle2" parent="Mods/eagles" instance=ExtResource("5_hwjho")]
-position = Vector2(1304, 480)
-
-[node name="eagle3" parent="Mods/eagles" instance=ExtResource("5_hwjho")]
-position = Vector2(1184, 480)
-
-[node name="eagle4" parent="Mods/eagles" instance=ExtResource("5_hwjho")]
-position = Vector2(1248, 480)
-
-[node name="eagle5" parent="Mods/eagles" instance=ExtResource("5_hwjho")]
-position = Vector2(1584, 480)
-
-[node name="eagle6" parent="Mods/eagles" instance=ExtResource("5_hwjho")]
-position = Vector2(1528, 480)
-
-[node name="eagle7" parent="Mods/eagles" instance=ExtResource("5_hwjho")]
-position = Vector2(1408, 480)
-
-[node name="eagle8" parent="Mods/eagles" instance=ExtResource("5_hwjho")]
-position = Vector2(1472, 480)
+position = Vector2(224, 584)
 
 [node name="frogs" type="Node2D" parent="Mods"]
 
