@@ -616,8 +616,7 @@ script = ExtResource("9_vras5")
 position = Vector2(208, 456)
 shape = SubResource("WorldBoundaryShape2D_vacjg")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+[node name="GameManager" type="Node" parent="."]
 script = ExtResource("7_k7pjh")
-hearts = [NodePath("../UI/Hearts/BoxContainer/Heart"), NodePath("../UI/Hearts/BoxContainer/Heart2"), NodePath("../UI/Hearts/BoxContainer/Heart3")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
