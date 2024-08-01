@@ -808,9 +808,11 @@ position = Vector2(2.5, -30)
 shape = SubResource("RectangleShape2D_ycdpt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.87, 0.87)
+zoom = Vector2(1.09, 1.09)
 limit_left = 0
 limit_top = 0
+limit_right = 100000
+limit_bottom = 700
 
 [node name="Area2DAttack" type="Area2D" parent="." groups=["Sword"]]
 
