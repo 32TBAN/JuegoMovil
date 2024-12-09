@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = $AnimatedSprite2D
 var direction = Vector2(1, 0)
 @onready var player_camera = get_parent().get_parent().get_parent().get_node("Player/player1/Camera2D")
@@ -15,6 +14,7 @@ var egg_scene = preload("res://charaters/enemies/eagle/egg.tscn")
 var can_drop_egg = true
 @onready var egg_timer = $egg_timer
 var is_dead = false
+
 func _ready():
 	update_limits()
 

@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -410.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
 @onready var attack_area = $Area2DAttack
 var is_attacking = false
-
 var arrow_scene = preload("res://charaters/players/arrow.tscn")
 
 func _process(delta):
@@ -16,7 +15,12 @@ func _process(delta):
 	handle_gravity(delta) # Apply gravity even when attacking
 
 	move_and_slide()
-
+	
+	if  Input.is_action_pressed("jump") and Input.is_action_pressed("attack"):
+		anim.play("AttackJump")
+		is_attacking = true
+		get_node("Area2DAttack/CollisionShape2DAttack").disabled = false
+		
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		anim.play("MeleAttack")
 		is_attacking = true
@@ -25,10 +29,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("attack2") and not is_attacking:
 		anim.play("RangeAttack")
 		is_attacking = true
-		anim.position.y = -51
 		anim.flip_h = !anim.flip_h
 		shoot_arrow()
 		
+
 		
 func handle_input():
 	velocity.x = 0
@@ -37,16 +41,16 @@ func handle_input():
 		anim.flip_h = false
 		velocity.x = SPEED
 		attack_area.position.x = 0
-		$CollisionShape2DPlayer.position.x = -20		
+		$CollisionShape2DPlayer.position.x = -2
 		anim.position.x = 0
-		attack_area.position.x = -23
+		attack_area.position.x = 10
 		
 	elif Input.is_action_pressed("left"):
 		anim.flip_h = true
 		velocity.x = -SPEED
-		attack_area.position.x = -83  # Cambiar la posición del área de ataque
+		attack_area.position.x = -82  # Cambiar la posición del área de ataque
 		
-		$CollisionShape2DPlayer.position.x = -10		
+		$CollisionShape2DPlayer.position.x = -25	
 		anim.position.x = -30
 		
 	if velocity.x != 0 && !is_attacking:
@@ -54,7 +58,7 @@ func handle_input():
 			anim.play("Run")
 	elif is_on_floor() && !is_attacking:
 		anim.play("Idle")
-	
+		
 	if Input.is_action_just_pressed("jump") and is_on_floor() && !is_attacking:
 		velocity.y = JUMP_VELOCITY
 		anim.play("Jump")
@@ -71,7 +75,11 @@ func _on_animated_sprite_2d_animation_finished():
 		anim.position.y = $CollisionShape2DPlayer.position.y	
 		is_attacking = false
 		anim.flip_h = !anim.flip_h
-		
+	
+	if anim.animation == "AttackJump":
+		is_attacking = false
+		get_node("Area2DAttack/CollisionShape2DAttack").disabled = true
+			
 	if velocity.x != 0:
 		anim.play("Run")
 	else:

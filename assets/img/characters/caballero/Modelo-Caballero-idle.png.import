@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8dasuionobe7"
-path="res://.godot/imported/back.png-b47c0407e6fe45306d644550150c723a.ctex"
+uid="uid://dkwoueyjx0lpu"
+path="res://.godot/imported/Modelo-Caballero-idle.png-321757cf4826be9cdf1b84a99d1c3097.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/back.png"
-dest_files=["res://.godot/imported/back.png-b47c0407e6fe45306d644550150c723a.ctex"]
+source_file="res://assets/img/characters/caballero/Modelo-Caballero-idle.png"
+dest_files=["res://.godot/imported/Modelo-Caballero-idle.png-321757cf4826be9cdf1b84a99d1c3097.ctex"]
 
 [params]
 

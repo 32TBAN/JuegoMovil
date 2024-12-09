@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://d4bfuloucb8qc"]
 
-[ext_resource type="Script" path="res://scripts/characters/enemies/eagle/eagle.gd" id="1_48mfa"]
+[ext_resource type="Script" path="res://scripts/characters/enemies/eagle/eagle.gd" id="1_c48cg"]
 [ext_resource type="Texture2D" uid="uid://cwq2jso1ag1l1" path="res://assets/img/characters/enemies/eagle/fly/eagle-attack-1.png" id="1_wodfy"]
 [ext_resource type="Texture2D" uid="uid://bn12x5wqfxi5l" path="res://assets/img/characters/enemies/eagle/fly/eagle-attack-2.png" id="2_df3gu"]
 [ext_resource type="Texture2D" uid="uid://cfbtjq3aphied" path="res://assets/img/characters/enemies/enemy-death/enemy-death-1.png" id="2_wnjw7"]
@@ -62,7 +62,7 @@ radius = 28.0713
 radius = 19.0
 
 [node name="eagle" type="CharacterBody2D"]
-script = ExtResource("1_48mfa")
+script = ExtResource("1_c48cg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4.76837e-07, 0)

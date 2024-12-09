@@ -40,7 +40,7 @@ func handle_gravity(delta):
 		velocity.y += gravity * delta 
 
 func handle_collision(collider):
-	if collider.name == "TileMap":
+	if collider.name == "TileMap3":
 		return
 		
 	velocity.x = -velocity.x
