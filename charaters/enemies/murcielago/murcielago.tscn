@@ -48,7 +48,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -85,14 +85,10 @@ rotation = -0.0139626
 scale = Vector2(1.475, 1.44512)
 sprite_frames = SubResource("SpriteFrames_6m2g6")
 animation = &"fly"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_dqtaw")
-
-[node name="egg_timer" type="Timer" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -106,4 +102,6 @@ shape = SubResource("CircleShape2D_40axm")
 shape = SubResource("RectangleShape2D_iejh5")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="AreaAtaque" to="." method="_on_area_ataque_area_entered"]
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
+[connection signal="body_exited" from="AreaAtaque" to="." method="_on_area_ataque_body_exited"]

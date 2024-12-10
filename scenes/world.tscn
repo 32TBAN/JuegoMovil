@@ -6329,7 +6329,7 @@ texture = ExtResource("2_4hhvk")
 [node name="Player" type="Node2D" parent="SceneObjects"]
 
 [node name="player1" parent="SceneObjects/Player" instance=ExtResource("3_tju3s")]
-position = Vector2(331, 564)
+position = Vector2(560, 560)
 
 [node name="Mods" type="Node2D" parent="SceneObjects"]
 
@@ -6338,8 +6338,13 @@ position = Vector2(331, 564)
 [node name="enemy1" parent="SceneObjects/Mods/frogs" instance=ExtResource("5_78ebj")]
 position = Vector2(1322, 405)
 
-[node name="Murcielago" parent="SceneObjects/Mods" instance=ExtResource("6_00m11")]
+[node name="Bats" type="Node2D" parent="SceneObjects/Mods"]
+
+[node name="Murcielago" parent="SceneObjects/Mods/Bats" instance=ExtResource("6_00m11")]
 position = Vector2(1803, 276)
+
+[node name="Murcielago2" parent="SceneObjects/Mods/Bats" instance=ExtResource("6_00m11")]
+position = Vector2(243, 279)
 
 [node name="Collectables" type="Node2D" parent="SceneObjects"]
 position = Vector2(0, 8)
