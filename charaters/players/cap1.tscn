@@ -531,7 +531,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycdpt"]
-size = Vector2(40, 88)
+size = Vector2(40, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6up5"]
 size = Vector2(36, 56)
@@ -546,7 +546,8 @@ sprite_frames = SubResource("SpriteFrames_rvwlv")
 animation = &"AttackJump"
 
 [node name="CollisionShape2DPlayer" type="CollisionShape2D" parent="."]
-position = Vector2(-12, -44)
+texture_filter = 1
+position = Vector2(-12, -48)
 shape = SubResource("RectangleShape2D_ycdpt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
