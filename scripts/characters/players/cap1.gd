@@ -16,7 +16,7 @@ func _process(delta):
 
 	move_and_slide()
 	
-	if  Input.is_action_pressed("jump") and Input.is_action_pressed("attack"):
+	if  (Input.is_action_pressed("jump") and Input.is_action_pressed("attack")) or (Input.is_action_pressed("attack") && !is_on_floor()):
 		anim.play("AttackJump")
 		is_attacking = true
 		get_node("Area2DAttack/CollisionShape2DAttack").disabled = false

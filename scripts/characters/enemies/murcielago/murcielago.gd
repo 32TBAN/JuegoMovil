@@ -10,8 +10,8 @@ var is_area_player = false
 var was_attack = false
 
 @onready var anim = $AnimatedSprite2D
-@onready var player_camera = get_parent().get_parent().get_parent().get_node("Player/player1/Camera2D")
-@onready var player = get_parent().get_parent().get_parent().get_node("Player/player1")
+@onready var player_camera = get_parent().get_parent().get_node("Player/player1/Camera2D")
+@onready var player = get_parent().get_parent().get_node("Player/player1")
 
 var left_limit = 0
 var right_limit = 0
@@ -104,12 +104,13 @@ func _on_area_ataque_body_entered(body):
 		is_area_player = true
 
 
-func _on_area_ataque_area_entered(area):
+func _on_area_ataque_body_exited(body):
+	if body.name == "player1":
+		is_area_player = false
+
+
+func _on_area_2d_area_entered(area):
 	if area.is_in_group("Sword"):
 		is_dead = true
 		anim.play("Death")
 		velocity.x = 0
-
-func _on_area_ataque_body_exited(body):
-	if body.name == "player1":
-		is_area_player = false
