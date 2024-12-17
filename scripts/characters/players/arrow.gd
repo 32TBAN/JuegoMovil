@@ -7,11 +7,11 @@ var direction = Vector2.ZERO
 func _ready():
 	gravity_scale = 0 
 
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	if direction != Vector2.ZERO:
 		linear_velocity = direction * speed
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_entered(_area):
 	gravity_scale = 1 # Activa la gravedad al colisionar
 	direction = Vector2.ZERO  # Detiene el movimiento lineal
 	linear_velocity = Vector2.ZERO  # Resetear velocidad

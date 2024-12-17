@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbbr3sgaafjc3"]
+
+[ext_resource type="Script" path="res://scripts/characters/enemies/nigromante/Nigromante.gd" id="1_k6sxk"]
+[ext_resource type="Texture2D" uid="uid://cm3yfckkp85rf" path="res://assets/img/characters/enemies/Nigromant/Nigromante-walk.png" id="1_ljq4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arw1o"]
+atlas = ExtResource("1_ljq4d")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5tk6"]
+atlas = ExtResource("1_ljq4d")
+region = Rect2(0, 68, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oijbr"]
+atlas = ExtResource("1_ljq4d")
+region = Rect2(0, 136, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mykt4"]
+atlas = ExtResource("1_ljq4d")
+region = Rect2(0, 204, 68, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i50io"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arw1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5tk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oijbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mykt4")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23veu"]
+height = 101.0
+
+[node name="Nigromante" type="CharacterBody2D"]
+script = ExtResource("1_k6sxk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -59)
+scale = Vector2(1.45221, 1.72427)
+sprite_frames = SubResource("SpriteFrames_i50io")
+animation = &"walk"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -51.5)
+shape = SubResource("CapsuleShape2D_23veu")
